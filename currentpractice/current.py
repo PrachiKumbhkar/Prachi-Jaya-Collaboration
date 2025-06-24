@@ -336,7 +336,20 @@ def myfunc(lists):
 
 print(myfunc([11,33,50]))
 
+#  added this question new
+# 1 .  Write a function that takes a string as input and returns the number of vowels in the string.
 
+def getVowels(inputstr):
+    count = 0
+    vowels = "aeiouAEIOU"
+
+    for i in inputstr:
+        if i in vowels:
+            count = count+1
+
+    return count
+
+print(getVowels("coderwin"))
 
 
 
