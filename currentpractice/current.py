@@ -351,6 +351,118 @@ def getVowels(inputstr):
 
 print(getVowels("coderwin"))
 
+#  26 June 2025 added some questions
+
+# 2.	Write a function that takes a string as input and returns the number of vowels in the string.
+def countVowels(inputstring):
+    vowels = "aeiouAEIOU"
+    count=0
+
+    for char in inputstring:
+        if char in vowels:
+            count = count+ 1
+
+    return count 
+
+print("VowelCount : ",countVowels("coderwin"))
+
+
+# 3.	Create a function that checks if a number is a palindrome.
+num  = 1223221
+num_copy = num 
+reversed_num = ""
+
+while num != 0:
+    lastdigit = num%10
+
+    reversed_num = reversed_num + str(lastdigit)
+
+    num = (num-lastdigit) //10
+
+if int(reversed_num) == num_copy:
+    print("number is palindrom")
+
+else:
+    print("number is not palindrom")
+
+# 4.	Write a function that takes a list of integers and returns a new list with only the prime numbers.
+def checkprime(lists):
+    primelist = []
+
+    for i in lists:
+        if i > 1 :
+            for j in range(2,i):
+                if i %j == 0:
+                    break
+
+            else:
+                primelist.append(i)
+
+    return primelist
+
+print(checkprime([23,11,56,68,34,98,7,3,9,54,5]))
+
+# 5.	Define a function that takes a string and returns the count of each character in the string.
+def countChar(string):
+    empdict = {}
+
+    for char in string:
+        if char not in empdict:
+            empdict[char] = 1
+
+        else:
+            empdict[char] = empdict[char] +1
+
+    return empdict
+
+print("Count Characters : ",countChar("exercises"))
+
+# Dictionary
+# 71.	Write a program to merge two dictionaries and handle duplicate keys by summing their values.
+dict1 = {"a":10,"b":20,"c":30,"d":40}
+dict2 = {"b":20,"c":10,"e":50}
+
+merged_dict =dict1.copy()
+print(merged_dict)
+
+for key,value in dict2.items():
+    if key in merged_dict:
+        merged_dict[key] = merged_dict[key]+value 
+
+    else:
+        merged_dict[key] = value 
+
+print(merged_dict)
+
+# 72.	Create a dictionary comprehension to count the frequency of vowels in a string.
+def countVowelss(string):
+    vowels = "aeiouAEIOU"
+
+    dict_comp = {char:string.count(char) for char in string if char in vowels}    
+    return dict_comp
+
+print(countVowelss("coderwin"))
+# 73.	Sort a dictionary by values in descending order.
+dicts1 = {"a":40,"b":20,"c":50,"d":10,"e":30}
+
+# first method
+sorteddict1 = sorted(dicts1.items() , key= lambda x : x[1] ,reverse=True)
+print(sorteddict1)
+
+# 74.	Write a program to check if two dictionaries are equal.
+def checkequaldict(dict1,dict2):
+    return dict==dict2
+
+print(checkequaldict({"a":40,"b":20,"c":50,"d":10},{"a":40,"b":20,"c":50,"d":10}))
+
+# 75.	Find the maximum and minimum value in a dictionary.
+
+dicts2 = {"a":40,"b":20,"c":50,"d":10,"e":30}
+minimum = min(dicts2.values())
+maximum = max(dicts2.values())
+
+print("Minimum : ",minimum)
+print("Maximum : ",maximum)
 
 
 
